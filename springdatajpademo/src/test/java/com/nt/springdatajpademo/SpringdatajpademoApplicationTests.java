@@ -90,8 +90,36 @@ class SpringdatajpademoApplicationTests {
 		System.out.println(num);
 	}
 	
+	@Test
+	public void printStudentByEmail() {
+		Student student=studentRepository.getStudentByEmail("jaicypankiraj@example.com");
+		System.out.println(student);
+	}
+	
+	@Test
+	public void printStudentNameByEmail() {
+		String name =studentRepository.getStudentNameByEmail("jaicypankiraj@example.com");
+		System.out.println(name);
+	}
+	
+	@Test
+	public void printStudentNameByEmailNative() {
+		String name=studentRepository.getStudentNameByEmailNative("jaicypankiraj@example.com");
+		System.out.println(name);
+	}
+	
+	@Test
+	public void printStudentNameByEmailNativeNamedQuery() {
+		String name=studentRepository.getStudentNameByEmailNativeNamedQuery("jaicypankiraj@example.com");
+		System.out.println(name);
+	}
 	
 	
+	@Test
+	public void updateStudentDetails() {
+		int result=studentRepository.updateStudent(1);
+		System.out.println(result);
+	}
 	
 
 }
